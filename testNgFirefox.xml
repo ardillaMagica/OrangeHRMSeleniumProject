@@ -10,10 +10,9 @@
         </groups>
         <classes>
             <class name="TestCases.LoginPageTestCases"/>
+            <class name="TestCases.CandidatesTestCases"/>
             <class name="TestCases.AddEmployeePageTestCases"/>
             <class name="TestCases.EmployeeListPageTestCases"/>
-            <class name="TestCases.CandidatesTestCases"/>
-            <class name="TestCases.AddUserPageTestCases"></class>
             <class name="TestCases.UsersPageTestCases"></class>
             <class name="TestCases.CorporateBrandingPageTestCases"></class>
             <class name="TestCases.OrganizationStructurePageTestCases"></class>
@@ -52,10 +51,9 @@
 
         <classes>
             <class name="TestCases.LoginPageTestCases"/>
+            <class name="TestCases.CandidatesTestCases"/>
             <class name="TestCases.AddEmployeePageTestCases"/>
             <class name="TestCases.EmployeeListPageTestCases"/>
-            <class name="TestCases.CandidatesTestCases"/>
-            <class name="TestCases.AddUserPageTestCases"></class>
             <class name="TestCases.UsersPageTestCases"></class>
             <class name="TestCases.CorporateBrandingPageTestCases"></class>
             <class name="TestCases.OrganizationStructurePageTestCases"></class>

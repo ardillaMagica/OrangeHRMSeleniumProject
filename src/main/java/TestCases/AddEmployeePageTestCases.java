@@ -14,7 +14,7 @@ import org.testng.asserts.SoftAssert;
 
 public class AddEmployeePageTestCases extends BaseDriver {
     @Parameters({"browser"})
-    @BeforeTest
+    @BeforeTest(groups = {"Sanity", "Regression", "Login", "Recruit"})
     public void AddEmployeeTestCases(String browser){
         startSession(browser);
         PageFactory.initElements(driver, LoginPage.class);
@@ -28,7 +28,7 @@ public class AddEmployeePageTestCases extends BaseDriver {
         }
     }
 
-    @Test
+    @Test(groups = {"Regression"}, priority = 3)
     public void missingLastNameError() throws InterruptedException{
         Thread.sleep(3000);
         MainMenu.pimPageButton.click();
@@ -47,7 +47,7 @@ public class AddEmployeePageTestCases extends BaseDriver {
         softAssertion.assertEquals(AddEmployeePage.lastNameRequiredMessage.getText(), "Required");
     }
 
-    @Test
+    @Test(groups = {"Sanity", "Regression"}, priority = 1)
     public void addingEmployee() throws InterruptedException{
         Thread.sleep(3000);
         MainMenu.pimPageButton.click();
@@ -67,7 +67,7 @@ public class AddEmployeePageTestCases extends BaseDriver {
         softAssertion.assertEquals(newEmployeeName, "Milo Dog");
     }
 
-    @Test
+    @Test(groups = {"Regression"}, priority = 2)
     public void createLoginCredSwitch() throws InterruptedException{
         Thread.sleep(3000);
         MainMenu.pimPageButton.click();
@@ -77,5 +77,6 @@ public class AddEmployeePageTestCases extends BaseDriver {
         AddEmployeePage.createLoginSwitch.click();
         Thread.sleep(3000);
         AddEmployeePage.enabledRadioButton.isSelected();
+        AddEmployeePage.cancelButton.click();
     }
 }

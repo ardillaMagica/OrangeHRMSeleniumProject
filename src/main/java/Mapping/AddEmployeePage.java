@@ -36,6 +36,10 @@ public class AddEmployeePage {
     @FindBy(xpath = "//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div/form/div[2]/button[2]")
     public static WebElement saveButton;
 
+    //Cancel button
+    @FindBy(xpath = "//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div/form/div[2]/button[1]")
+    public static WebElement cancelButton;
+
     //Last name required message
     @FindBy(xpath = "//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[1]/div[1]/div/div/div[2]/div[3]/span")
     public static WebElement lastNameRequiredMessage;
