@@ -10,9 +10,56 @@
         </groups>
         <classes>
             <class name="TestCases.LoginPageTestCases"/>
-<!--            <class name="TestCases.AddEmployeePageTestCases"/>-->
-<!--            <class name="TestCases.EmployeeListPageTestCases"/>-->
-<!--            <class name="TestCases.CandidatesTestCases"/>-->
+            <class name="TestCases.AddEmployeePageTestCases"/>
+            <class name="TestCases.EmployeeListPageTestCases"/>
+            <class name="TestCases.CandidatesTestCases"/>
+            <class name="TestCases.AddUserPageTestCases"></class>
+            <class name="TestCases.UsersPageTestCases"></class>
+            <class name="TestCases.CorporateBrandingPageTestCases"></class>
+            <class name="TestCases.OrganizationStructurePageTestCases"></class>
+            <class name="TestCases.SkillPageTestCases"></class>
+        </classes>
+    </test>
+
+    <test name="Login tests">
+        <groups>
+            <run>
+                <include name="Login"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="TestCases.LoginPageTestCases"></class>
+        </classes>
+    </test>
+
+    <test name="New Candidate flow">
+        <groups>
+            <run>
+                <include name="Recruit"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="TestCases.CandidatesTestCases"></class>
+        </classes>
+    </test>
+
+    <test name="Regession tests">
+        <groups>
+            <run>
+                <include name="Regression"></include>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="TestCases.LoginPageTestCases"/>
+            <class name="TestCases.AddEmployeePageTestCases"/>
+            <class name="TestCases.EmployeeListPageTestCases"/>
+            <class name="TestCases.CandidatesTestCases"/>
+            <class name="TestCases.AddUserPageTestCases"></class>
+            <class name="TestCases.UsersPageTestCases"></class>
+            <class name="TestCases.CorporateBrandingPageTestCases"></class>
+            <class name="TestCases.OrganizationStructurePageTestCases"></class>
+            <class name="TestCases.SkillPageTestCases"></class>
         </classes>
     </test>
 </suite>

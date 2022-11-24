@@ -29,7 +29,7 @@ public class CandidatesTestCases extends BaseDriver {
         }
     }
 
-    @Test
+    @Test(groups = {"Regression"}, priority = 7)
     public void searchRejectedCandidates() throws InterruptedException{
         Thread.sleep(3000);
         MainMenu.recruitmentPageButton.click();
@@ -43,7 +43,7 @@ public class CandidatesTestCases extends BaseDriver {
         CandidatesPage.searchButton.click();
     }
 
-    @Test
+    @Test(groups = {"Recruit", "Regression"}, priority = 1)
     public void AddNewCandidate() throws InterruptedException{
         Thread.sleep(3000);
         MainMenu.recruitmentPageButton.click();
@@ -66,7 +66,7 @@ public class CandidatesTestCases extends BaseDriver {
         AddCandidatePage.saveCandidateButton.click();
     }
 
-    @Test
+    @Test(groups = {"Recruit", "Regression"}, priority = 2)
     public void editCandidate() throws InterruptedException{
         Thread.sleep(3000);
         MainMenu.recruitmentPageButton.click();
@@ -86,7 +86,7 @@ public class CandidatesTestCases extends BaseDriver {
         CandidateProfilePage.saveChangesButton.click();
     }
 
-    @Test
+    @Test(groups = {"Recruit", "Regression"}, priority = 3)
     public void shortlistApplication() throws InterruptedException{
         Thread.sleep(3000);
         MainMenu.recruitmentPageButton.click();
@@ -105,7 +105,7 @@ public class CandidatesTestCases extends BaseDriver {
         saveButton.click();
     }
 
-    @Test
+    @Test(groups = {"Recruit", "Regression"}, priority = 4)
     public void scheduleInterview() throws InterruptedException{
         Thread.sleep(3000);
         MainMenu.recruitmentPageButton.click();
@@ -139,7 +139,7 @@ public class CandidatesTestCases extends BaseDriver {
         ScheduleInterview.saveButton.click();
     }
 
-    @Test
+    @Test(groups = {"Recruit", "Regression"}, priority = 5)
     public void markInterviewPassed() throws InterruptedException{
         Thread.sleep(3000);
         MainMenu.recruitmentPageButton.click();
@@ -159,7 +159,7 @@ public class CandidatesTestCases extends BaseDriver {
         save.click();
     }
 
-    @Test
+    @Test(groups = {"Recruit", "Regression"}, priority = 6)
     public void offerJob() throws InterruptedException{
         Thread.sleep(3000);
         MainMenu.recruitmentPageButton.click();
