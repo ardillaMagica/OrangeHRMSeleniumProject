@@ -4,13 +4,15 @@ import Core.BaseDriver;
 import Mapping.*;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class OrganizationStructurePageTestCases extends BaseDriver {
+    @Parameters({"browser"})
     @BeforeTest
-    public void OrganizationStructureTestCases(){
-        startSession();
+    public void OrganizationStructureTestCases(String browser){
+        startSession(browser);
         PageFactory.initElements(driver, LoginPage.class);
         PageFactory.initElements(driver, MainMenu.class);
         PageFactory.initElements(driver, AdminPage.class);

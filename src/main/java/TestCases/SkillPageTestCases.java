@@ -6,12 +6,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class SkillPageTestCases extends BaseDriver {
+    @Parameters({"browser"})
     @BeforeTest
-    public void SkillsTestCases(){
-        startSession();
+    public void SkillsTestCases(String browser){
+        startSession(browser);
         PageFactory.initElements(driver, LoginPage.class);
         PageFactory.initElements(driver, MainMenu.class);
         PageFactory.initElements(driver, AdminPage.class);

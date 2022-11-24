@@ -7,12 +7,14 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class CorporateBrandingPageTestCases extends BaseDriver {
+    @Parameters({"browser"})
     @BeforeTest
-    public void CorporateBrandingTestCases(){
-        startSession();
+    public void CorporateBrandingTestCases(String browser){
+        startSession(browser);
         PageFactory.initElements(driver, LoginPage.class);
         PageFactory.initElements(driver, MainMenu.class);
         PageFactory.initElements(driver, AdminPage.class);

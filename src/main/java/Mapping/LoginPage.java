@@ -9,6 +9,7 @@ public class LoginPage {
 
     //Username input field
     @FindBy(xpath = "//*[@id=\'app\']/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input")
+
     public static WebElement usernameField;
 
     //Password input field

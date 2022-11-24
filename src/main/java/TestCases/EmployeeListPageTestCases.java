@@ -6,13 +6,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class EmployeeListPageTestCases extends BaseDriver {
+    @Parameters({"browser"})
     @BeforeTest
-    public void EmployeeListTestCases(){
-        startSession();
+    public void EmployeeListTestCases(String browser){
+        startSession(browser);
         PageFactory.initElements(driver, LoginPage.class);
         PageFactory.initElements(driver, MainMenu.class);
         PageFactory.initElements(driver, PimPage.class);

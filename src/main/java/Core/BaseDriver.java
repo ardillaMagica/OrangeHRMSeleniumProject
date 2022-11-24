@@ -22,10 +22,10 @@ public class BaseDriver {
 
     public WebDriver getDriver() { return driver;}
 
-    public void startSession(){
+    public void startSession(String browser){
         try{
             PropertyUtil pus = new PropertyUtil(path + "\\selenium.properties");
-            String browser = pus.getProperty("browser");
+//            String browser = pus.getProperty("browser");
             String WebSiteURL = pus.getProperty("WebSiteURL");
             String grid = pus.getProperty("grid");
             String gridUrl = pus.getProperty("gridUrl");
@@ -38,7 +38,7 @@ public class BaseDriver {
                     driver = new RemoteWebDriver(new URL(gridUrl), cap);
                 }else{
                     System.setProperty("webdriver.gecko.driver", path + "\\drivers\\geckodriver.exe");
-                    WebDriver driver = new FirefoxDriver();
+                    driver = new FirefoxDriver();
                 }
             }else if(browser.equalsIgnoreCase("chrome")){
                 if(grid.equalsIgnoreCase("true")){
@@ -66,15 +66,11 @@ public class BaseDriver {
     public void Login() throws InterruptedException{
         Thread.sleep(3000);
         LoginPage.usernameField.sendKeys("Admin");
-//        Thread.sleep(3000);
         LoginPage.passwordField.sendKeys("admin123");
-//        Thread.sleep(3000);
         LoginPage.loginButton.click();
     }
-    long timeout = 5000;
-    long interval = 500;
 
     public void stopSession() {
     driver.quit();
-}
+    }
 }
