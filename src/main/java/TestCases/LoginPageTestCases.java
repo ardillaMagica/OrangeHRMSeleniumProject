@@ -8,13 +8,14 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class LoginPageTestCases extends BaseDriver {
-    @BeforeTest
+//    @BeforeTest(groups = {"Sanity", "Regression", "Login", "Recruit"})
+    @BeforeTest(groups = {"Sanity", "Regression", "Login"})
     public void LoginTestCases(){
         startSession();
         PageFactory.initElements(driver, LoginPage.class);
     }
 
-    @Test(groups ={"Regression"}, priority = 1)
+    @Test(groups ={"Regression", "Login"}, priority = 1)
     public void emptyCredLoginTest() throws InterruptedException{
         Thread.sleep(5000);
         LoginPage.loginButton.click();
@@ -24,7 +25,7 @@ public class LoginPageTestCases extends BaseDriver {
         softAssertion.assertEquals(LoginPage.passwordRequiredMessage.getText(), "Required");
     }
 
-    @Test(groups ={"Regression"}, priority = 2)
+    @Test(groups ={"Regression", "Login"}, priority = 2)
     public void InvalidUsernameTest() throws InterruptedException{
         Thread.sleep(5000);
         LoginPage.usernameField.sendKeys("OMG");
@@ -37,7 +38,7 @@ public class LoginPageTestCases extends BaseDriver {
         softAssertion.assertEquals(LoginPage.loginErrorMessage.getText(), "Invalid credentials");
     }
 
-    @Test(groups ={"Regression"}, priority = 3)
+    @Test(groups ={"Regression", "Login"}, priority = 3)
     public void InvalidPasswordTest() throws InterruptedException{
         Thread.sleep(5000);
         LoginPage.usernameField.sendKeys("Admin");
@@ -50,7 +51,7 @@ public class LoginPageTestCases extends BaseDriver {
         softAssertion.assertEquals(LoginPage.loginErrorMessage.getText(), "Invalid credentials");
     }
 
-    @Test(groups ={"Sanity", "Regression"}, priority = 4)
+    @Test(groups={"Sanity", "Regression", "Login"}, priority = 4)
     public void SuccessfulLoginTest() throws InterruptedException{
         Thread.sleep(5000);
         LoginPage.usernameField.sendKeys("Admin");

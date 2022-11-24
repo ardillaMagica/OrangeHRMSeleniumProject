@@ -73,5 +73,7 @@ public class AddEmployeePageTestCases extends BaseDriver {
         PimPage.addEmployeeButton.click();
         Thread.sleep(3000);
         AddEmployeePage.createLoginSwitch.click();
+        Thread.sleep(3000);
+        AddEmployeePage.enabledRadioButton.isSelected();
     }
 }

@@ -28,6 +28,10 @@ public class AddEmployeePage {
     @FindBy(xpath = "//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[2]/div/label/span")
     public static WebElement createLoginSwitch;
 
+    //Status enabled radio button
+    @FindBy(xpath = "//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[3]/div/div[2]/div/div[2]/div[1]/div[2]/div")
+    public static WebElement enabledRadioButton;
+
     //Save button
     @FindBy(xpath = "//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div/form/div[2]/button[2]")
     public static WebElement saveButton;

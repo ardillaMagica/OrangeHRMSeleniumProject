@@ -9,8 +9,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class CandidateProfilePageTestCases extends BaseDriver {
-    @BeforeTest
+public class CandidatesTestCases extends BaseDriver {
+    @BeforeTest(groups = {"Sanity", "Regression", "Login", "Recruit"})
     public void CandidatesTestCases(){
         startSession();
         PageFactory.initElements(driver, LoginPage.class);
@@ -18,12 +18,50 @@ public class CandidateProfilePageTestCases extends BaseDriver {
         PageFactory.initElements(driver, RecruitmentPage.class);
         PageFactory.initElements(driver, CandidatesPage.class);
         PageFactory.initElements(driver, CandidateProfilePage.class);
+        PageFactory.initElements(driver, AddCandidatePage.class);
         PageFactory.initElements(driver, ScheduleInterview.class);
         try {
             Login();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Test
+    public void searchRejectedCandidates() throws InterruptedException{
+        Thread.sleep(3000);
+        MainMenu.recruitmentPageButton.click();
+        Thread.sleep(3000);
+        RecruitmentPage.candidatesButton.click();
+        Thread.sleep(3000);
+        CandidatesPage.applicationStatus.click();
+        Thread.sleep(2000);
+        CandidatesPage.rejectedApplication.click();
+        Thread.sleep(2000);
+        CandidatesPage.searchButton.click();
+    }
+
+    @Test
+    public void AddNewCandidate() throws InterruptedException{
+        Thread.sleep(3000);
+        MainMenu.recruitmentPageButton.click();
+        Thread.sleep(2000);
+        RecruitmentPage.candidatesButton.click();
+        Thread.sleep(2000);
+        CandidatesPage.addCandidateButton.click();
+        Thread.sleep(2000);
+        AddCandidatePage.firstNameInputField.sendKeys("Milo");
+        Thread.sleep(2000);
+        AddCandidatePage.lastNameInputField.sendKeys("Monstro");
+        Thread.sleep(2000);
+        AddCandidatePage.vacancyDropDownMenu.click();
+        Thread.sleep(3000);
+        WebElement menuItem = driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div/form/div[2]/div/div/div/div[2]/div/div[2]/div[6]"));
+        menuItem.click();
+        Thread.sleep(2000);
+        AddCandidatePage.emailInputField.sendKeys("milo666@gmail.com");
+        Thread.sleep(2000);
+        AddCandidatePage.saveCandidateButton.click();
     }
 
     @Test
