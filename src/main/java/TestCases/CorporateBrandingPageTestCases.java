@@ -6,9 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class CorporateBrandingPageTestCases extends BaseDriver {
     @Parameters({"browser"})
@@ -28,13 +26,13 @@ public class CorporateBrandingPageTestCases extends BaseDriver {
 
     @Test(groups = {"Regression"}, priority = 1)
     public void achangePrimaryColor() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         MainMenu.adminPageButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         AdminPage.corporateBrandingLinkButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         CorporateBrandingPage.primaryColorPicker.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         WebElement colorInput = driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[1]/div/div[2]/div/div[2]/input[2]"));
         colorInput.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
         colorInput.sendKeys("#12eb9b");
@@ -45,16 +43,16 @@ public class CorporateBrandingPageTestCases extends BaseDriver {
     public void changeGradientColors() throws InterruptedException{
         Thread.sleep(5000);
         MainMenu.adminPageButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         AdminPage.corporateBrandingLinkButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         CorporateBrandingPage.primaryGradientColorOne.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         WebElement firstColor = driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[5]/div/div[2]/div/div[2]/input[2]"));
         firstColor.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
         firstColor.sendKeys("#b680e5");
         CorporateBrandingPage.primaryGradientColorTwo.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         WebElement secondColor = driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[6]/div/div[2]/div/div[2]/input[2]"));
         secondColor.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
         secondColor.sendKeys("#aec4f0");
@@ -65,9 +63,14 @@ public class CorporateBrandingPageTestCases extends BaseDriver {
     public void resetDefaultSettings() throws InterruptedException{
         Thread.sleep(5000);
         MainMenu.adminPageButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         AdminPage.corporateBrandingLinkButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         CorporateBrandingPage.resetButton.click();
+    }
+
+    @AfterClass
+    public void quitSession(){
+        stopSession();
     }
 }

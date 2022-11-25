@@ -2,18 +2,14 @@ package Core;
 
 import Mapping.LoginPage;
 import Utils.PropertyUtil;
-import com.sun.org.apache.xpath.internal.functions.Function;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 
 import java.net.URL;
-import java.util.concurrent.TimeUnit;
 
 public class BaseDriver {
 

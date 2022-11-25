@@ -3,9 +3,7 @@ package TestCases;
 import Core.BaseDriver;
 import Mapping.*;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
 public class OrganizationStructurePageTestCases extends BaseDriver {
@@ -26,15 +24,20 @@ public class OrganizationStructurePageTestCases extends BaseDriver {
 
     @Test(groups = {"Regression"})
     public void openTreeMenu() throws InterruptedException{
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         MainMenu.adminPageButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         AdminPage.organizationMenu.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         AdminPage.structureLinkButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         OrganizationStructurePage.engineeringTreeMenu.click();
         SoftAssert softAssertion = new SoftAssert();
         softAssertion.assertEquals(OrganizationStructurePage.techOpsTitle.getText(), "TechOps");
+    }
+
+    @AfterClass
+    public void quitSession(){
+        stopSession();
     }
 }

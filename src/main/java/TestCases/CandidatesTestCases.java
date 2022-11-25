@@ -5,9 +5,7 @@ import Mapping.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
 public class CandidatesTestCases extends BaseDriver {
@@ -68,7 +66,7 @@ public class CandidatesTestCases extends BaseDriver {
 
     @Test(groups = {"Recruit", "Regression"}, priority = 2)
     public void editCandidate() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         MainMenu.recruitmentPageButton.click();
         Thread.sleep(3000);
         CandidatesPage.candidateNameField.sendKeys("Milo");
@@ -88,52 +86,52 @@ public class CandidatesTestCases extends BaseDriver {
 
     @Test(groups = {"Recruit", "Regression"}, priority = 3)
     public void shortlistApplication() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         MainMenu.recruitmentPageButton.click();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         CandidatesPage.candidateNameField.sendKeys("Milo");
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         WebElement menuItem = driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/div/div[1]/div/div[2]/div/div[2]"));
         menuItem.click();
         CandidatesPage.searchButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         CandidatesPage.candidateDetailsButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         CandidateProfilePage.applicationNextStepButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         WebElement saveButton = driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div/form/div[3]/button[2]"));
         saveButton.click();
     }
 
     @Test(groups = {"Recruit", "Regression"}, priority = 4)
     public void scheduleInterview() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         MainMenu.recruitmentPageButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         CandidatesPage.candidateNameField.sendKeys("Milo");
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         WebElement menuItem = driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/div/div[1]/div/div[2]/div/div[2]"));
         menuItem.click();
         CandidatesPage.searchButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         CandidatesPage.candidateDetailsButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         SoftAssert softAssertion = new SoftAssert();
         softAssertion.assertEquals(CandidateProfilePage.applicationStatus.getText(), "Status: Shortlisted");
         //Status: Application Initiated
         CandidateProfilePage.applicationNextStepButton.click(); //change element?
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         ScheduleInterview.interviewTitle.sendKeys("Let's talk");
         ScheduleInterview.interviewerField.sendKeys("Odis");
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         WebElement interviewerPicked = driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div/form/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div"));
         interviewerPicked.click();
         ScheduleInterview.datePicker.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         WebElement datePicked = driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div/form/div[2]/div/div[3]/div/div[2]/div/div[2]/div/div[3]/div[30]/div"));
         datePicked.click();
         ScheduleInterview.timePicker.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         WebElement timePicked = driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div/form/div[2]/div/div[4]/div/div[2]/div/div[2]/div[4]/div[2]"));
         timePicked.click();
         ScheduleInterview.saveButton.click();
@@ -141,41 +139,46 @@ public class CandidatesTestCases extends BaseDriver {
 
     @Test(groups = {"Recruit", "Regression"}, priority = 5)
     public void markInterviewPassed() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         MainMenu.recruitmentPageButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         CandidatesPage.candidateNameField.sendKeys("Milo");
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         WebElement menuItem = driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/div/div[1]/div/div[2]/div/div[2]"));
         menuItem.click();
         CandidatesPage.searchButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         CandidatesPage.candidateDetailsButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         WebElement passed = driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[2]/div[2]/div[1]/form/div[2]/div[2]/button[3]"));
         passed.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         WebElement save = driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div/form/div[3]/button[2]"));
         save.click();
     }
 
     @Test(groups = {"Recruit", "Regression"}, priority = 6)
     public void offerJob() throws InterruptedException{
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         MainMenu.recruitmentPageButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         CandidatesPage.candidateNameField.sendKeys("Milo");
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         WebElement menuItem = driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/div/div[1]/div/div[2]/div/div[2]"));
         menuItem.click();
         CandidatesPage.searchButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         CandidatesPage.candidateDetailsButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         WebElement offerJobButton = driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[2]/div[2]/div[1]/form/div[2]/div[2]/button[3]"));
         offerJobButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         WebElement saveOfferButton = driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[2]/div[2]/div/div/form/div[3]/button[2]"));
         saveOfferButton.click();
+    }
+
+    @AfterTest
+    public void quitSession(){
+        stopSession();
     }
 }

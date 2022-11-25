@@ -5,9 +5,7 @@ import Mapping.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
 public class LoginPageTestCases extends BaseDriver {
@@ -65,6 +63,11 @@ public class LoginPageTestCases extends BaseDriver {
         Thread.sleep(5000);
         WebElement menu = driver.findElement(By.xpath("//*[@id=\'app\']/div[1]/div[1]/header/div[1]/div[2]/ul/li/span"));
         menu.isDisplayed();
+    }
+
+    @AfterClass
+    public void quitSession(){
+        stopSession();
     }
 
 }
