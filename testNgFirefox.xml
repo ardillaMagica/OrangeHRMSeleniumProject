@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Testing OrangeHRM on Chrome">
+<suite name="Testing OrangeHRM on FireFox">
     <parameter name="browser" value="firefox"></parameter>
     <test name="Sanity tests">
         <groups>
@@ -8,15 +8,15 @@
                 <include name="Sanity"></include>
             </run>
         </groups>
+
         <classes>
             <class name="TestCases.LoginPageTestCases"/>
             <class name="TestCases.CandidatesTestCases"/>
-            <class name="TestCases.AddEmployeePageTestCases"/>
             <class name="TestCases.EmployeeListPageTestCases"/>
-            <class name="TestCases.UsersPageTestCases"></class>
-            <class name="TestCases.CorporateBrandingPageTestCases"></class>
-            <class name="TestCases.OrganizationStructurePageTestCases"></class>
-            <class name="TestCases.SkillPageTestCases"></class>
+            <class name="TestCases.UsersPageTestCases"/>
+            <class name="TestCases.CorporateBrandingPageTestCases"/>
+            <class name="TestCases.OrganizationStructurePageTestCases"/>
+            <class name="TestCases.SkillPageTestCases"/>
         </classes>
     </test>
 
@@ -42,7 +42,7 @@
         </classes>
     </test>
 
-    <test name="Regession tests">
+    <test name="Regression tests">
         <groups>
             <run>
                 <include name="Regression"></include>
@@ -52,12 +52,11 @@
         <classes>
             <class name="TestCases.LoginPageTestCases"/>
             <class name="TestCases.CandidatesTestCases"/>
-            <class name="TestCases.AddEmployeePageTestCases"/>
             <class name="TestCases.EmployeeListPageTestCases"/>
-            <class name="TestCases.UsersPageTestCases"></class>
-            <class name="TestCases.CorporateBrandingPageTestCases"></class>
-            <class name="TestCases.OrganizationStructurePageTestCases"></class>
-            <class name="TestCases.SkillPageTestCases"></class>
+            <class name="TestCases.UsersPageTestCases"/>
+            <class name="TestCases.CorporateBrandingPageTestCases"/>
+            <class name="TestCases.OrganizationStructurePageTestCases"/>
+            <class name="TestCases.SkillPageTestCases"/>
         </classes>
     </test>
 </suite>

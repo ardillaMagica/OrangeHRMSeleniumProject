@@ -5,14 +5,14 @@ import Mapping.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class CandidatesTestCases extends BaseDriver {
     @Parameters({"browser"})
-    @BeforeTest(groups = {"Sanity", "Regression", "Login", "Recruit"})
+    @BeforeClass(groups = {"Sanity", "Regression", "Login", "Recruit"})
     public void CandidatesTestCases(String browser){
         startSession(browser);
         PageFactory.initElements(driver, LoginPage.class);

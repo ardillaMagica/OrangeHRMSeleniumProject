@@ -6,13 +6,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class CorporateBrandingPageTestCases extends BaseDriver {
     @Parameters({"browser"})
-    @BeforeTest
+    @BeforeClass(groups = {"Sanity", "Regression", "Login", "Recruit"})
     public void CorporateBrandingTestCases(String browser){
         startSession(browser);
         PageFactory.initElements(driver, LoginPage.class);
@@ -26,7 +26,7 @@ public class CorporateBrandingPageTestCases extends BaseDriver {
         }
     }
 
-    @Test
+    @Test(groups = {"Regression"}, priority = 1)
     public void achangePrimaryColor() throws InterruptedException{
         Thread.sleep(3000);
         MainMenu.adminPageButton.click();
@@ -41,7 +41,7 @@ public class CorporateBrandingPageTestCases extends BaseDriver {
         CorporateBrandingPage.publishButton.click();
     }
 
-    @Test
+    @Test(groups = {"Regression"}, priority = 2)
     public void changeGradientColors() throws InterruptedException{
         Thread.sleep(5000);
         MainMenu.adminPageButton.click();
@@ -61,7 +61,7 @@ public class CorporateBrandingPageTestCases extends BaseDriver {
         CorporateBrandingPage.publishButton.click();
     }
 
-    @Test
+    @Test(groups = {"Regression"}, priority = 3)
     public void resetDefaultSettings() throws InterruptedException{
         Thread.sleep(5000);
         MainMenu.adminPageButton.click();

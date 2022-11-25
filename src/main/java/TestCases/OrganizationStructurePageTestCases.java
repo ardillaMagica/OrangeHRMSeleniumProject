@@ -3,14 +3,14 @@ package TestCases;
 import Core.BaseDriver;
 import Mapping.*;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class OrganizationStructurePageTestCases extends BaseDriver {
     @Parameters({"browser"})
-    @BeforeTest
+    @BeforeClass(groups = {"Sanity", "Regression", "Login", "Recruit"})
     public void OrganizationStructureTestCases(String browser){
         startSession(browser);
         PageFactory.initElements(driver, LoginPage.class);
@@ -24,7 +24,7 @@ public class OrganizationStructurePageTestCases extends BaseDriver {
         }
     }
 
-    @Test
+    @Test(groups = {"Regression"})
     public void openTreeMenu() throws InterruptedException{
         Thread.sleep(2000);
         MainMenu.adminPageButton.click();

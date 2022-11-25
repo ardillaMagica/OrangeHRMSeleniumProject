@@ -5,13 +5,13 @@ import Mapping.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class SkillPageTestCases extends BaseDriver {
     @Parameters({"browser"})
-    @BeforeTest
+    @BeforeClass(groups = {"Sanity", "Regression", "Login", "Recruit"})
     public void SkillsTestCases(String browser){
         startSession(browser);
         PageFactory.initElements(driver, LoginPage.class);
@@ -26,7 +26,7 @@ public class SkillPageTestCases extends BaseDriver {
         }
     }
 
-    @Test
+    @Test(groups = {"Regression"}, priority = 1)
     public void addNewSkill() throws InterruptedException{
         Thread.sleep(2000);
         MainMenu.adminPageButton.click();
@@ -41,7 +41,7 @@ public class SkillPageTestCases extends BaseDriver {
         AddSkillPage.saveButton.click();
     }
 
-    @Test
+    @Test(groups = {"Regression"}, priority = 2)
     public void deleteSkill() throws InterruptedException{
         Thread.sleep(2000);
         MainMenu.adminPageButton.click();
