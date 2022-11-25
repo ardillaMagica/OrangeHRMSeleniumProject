@@ -8,7 +8,7 @@ import org.testng.asserts.SoftAssert;
 
 public class OrganizationStructurePageTestCases extends BaseDriver {
     @Parameters({"browser"})
-    @BeforeClass(groups = {"Sanity", "Regression", "Login", "Recruit"})
+    @BeforeClass(groups = {"Sanity", "Regression"})
     public void OrganizationStructureTestCases(String browser){
         startSession(browser);
         PageFactory.initElements(driver, LoginPage.class);
@@ -36,7 +36,7 @@ public class OrganizationStructurePageTestCases extends BaseDriver {
         softAssertion.assertEquals(OrganizationStructurePage.techOpsTitle.getText(), "TechOps");
     }
 
-    @AfterClass
+    @AfterClass(groups = {"Sanity", "Regression"})
     public void quitSession(){
         stopSession();
     }

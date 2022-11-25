@@ -10,7 +10,7 @@ import org.testng.annotations.*;
 
 public class CorporateBrandingPageTestCases extends BaseDriver {
     @Parameters({"browser"})
-    @BeforeClass(groups = {"Sanity", "Regression", "Login", "Recruit"})
+    @BeforeClass(groups = {"Sanity", "Regression"})
     public void CorporateBrandingTestCases(String browser){
         startSession(browser);
         PageFactory.initElements(driver, LoginPage.class);
@@ -25,7 +25,7 @@ public class CorporateBrandingPageTestCases extends BaseDriver {
     }
 
     @Test(groups = {"Regression"}, priority = 1)
-    public void achangePrimaryColor() throws InterruptedException{
+    public void changePrimaryColor() throws InterruptedException{
         Thread.sleep(5000);
         MainMenu.adminPageButton.click();
         Thread.sleep(5000);
@@ -69,7 +69,7 @@ public class CorporateBrandingPageTestCases extends BaseDriver {
         CorporateBrandingPage.resetButton.click();
     }
 
-    @AfterClass
+    @AfterClass(groups = {"Sanity", "Regression"})
     public void quitSession(){
         stopSession();
     }

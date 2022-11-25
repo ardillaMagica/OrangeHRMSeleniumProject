@@ -9,7 +9,7 @@ import org.testng.annotations.*;
 
 public class SkillPageTestCases extends BaseDriver {
     @Parameters({"browser"})
-    @BeforeClass(groups = {"Sanity", "Regression", "Login", "Recruit"})
+    @BeforeClass(groups = {"Sanity", "Regression"})
     public void SkillsTestCases(String browser){
         startSession(browser);
         PageFactory.initElements(driver, LoginPage.class);
@@ -55,7 +55,7 @@ public class SkillPageTestCases extends BaseDriver {
         confirmDelete.click();
     }
 
-    @AfterClass
+    @AfterClass(groups = {"Sanity", "Regression"})
     public void quitSession(){
         stopSession();
     }

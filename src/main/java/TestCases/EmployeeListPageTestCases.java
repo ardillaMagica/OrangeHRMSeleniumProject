@@ -12,7 +12,7 @@ import static org.testng.Assert.assertEquals;
 
 public class EmployeeListPageTestCases extends BaseDriver {
     @Parameters({"browser"})
-    @BeforeClass(groups = {"Sanity", "Regression", "Login", "Recruit"})
+    @BeforeClass(groups = {"Sanity", "Regression"})
     public void EmployeeListTestCases(String browser){
         startSession(browser);
         PageFactory.initElements(driver, LoginPage.class);
@@ -128,7 +128,7 @@ public class EmployeeListPageTestCases extends BaseDriver {
         AddEmployeePage.cancelButton.click();
     }
 
-    @AfterClass
+    @AfterClass(groups = {"Sanity", "Regression"})
     public void quitSession(){
         stopSession();
     }

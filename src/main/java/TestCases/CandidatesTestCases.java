@@ -177,7 +177,7 @@ public class CandidatesTestCases extends BaseDriver {
         saveOfferButton.click();
     }
 
-    @AfterTest
+    @AfterClass(groups = {"Sanity", "Regression", "Login", "Recruit"})
     public void quitSession(){
         stopSession();
     }

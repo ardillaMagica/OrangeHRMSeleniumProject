@@ -9,7 +9,7 @@ import org.testng.annotations.*;
 
 public class UsersPageTestCases extends BaseDriver {
     @Parameters({"browser"})
-    @BeforeClass(groups = {"Sanity", "Regression", "Login", "Recruit"})
+    @BeforeClass(groups = {"Sanity", "Regression"})
     public void UsersTestCases(String browser){
         startSession(browser);
         PageFactory.initElements(driver, LoginPage.class);
@@ -65,7 +65,7 @@ public class UsersPageTestCases extends BaseDriver {
         AddUserPage.saveUserButton.click();
     }
 
-    @AfterClass
+    @AfterClass(groups = {"Sanity", "Regression"})
     public void quitSession(){
         stopSession();
     }

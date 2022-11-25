@@ -65,7 +65,7 @@ public class LoginPageTestCases extends BaseDriver {
         menu.isDisplayed();
     }
 
-    @AfterClass
+    @AfterClass(groups = {"Sanity", "Regression", "Login"})
     public void quitSession(){
         stopSession();
     }

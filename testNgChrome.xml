@@ -19,7 +19,7 @@
             <class name="TestCases.SkillPageTestCases"/>
         </classes>
     </test>
-    
+
     <test name="Login tests">
         <groups>
             <run>
